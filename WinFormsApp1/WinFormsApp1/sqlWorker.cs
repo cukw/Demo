@@ -7,7 +7,13 @@ namespace WinFormsApp1
 {
     internal class sqlWorker
     {
-        private Config conf = new Config();
+        private readonly Config conf = new Config();
+
+        public sqlWorker(Config conf)
+        {
+            this.conf = conf;
+        }
+
         private SqlConnection getConnection() => new SqlConnection(conf.getServerConnection());
         private SqlCommand getCommand(string command, SqlConnection conn) => new SqlCommand(command, conn);
 

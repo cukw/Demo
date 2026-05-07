@@ -1,11 +1,17 @@
+using System.Drawing.Text;
+
 namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
-        sqlWorker worker = new sqlWorker();
+        private AuthService authService;
         public Form1()
         {
             InitializeComponent();
+
+            var conf = new Config();
+            var worker = new sqlWorker(conf);
+            authService = new AuthService(worker);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -19,7 +25,7 @@ namespace WinFormsApp1
             {
                 if (!string.IsNullOrEmpty(loginText.Text))
                 {
-                    if(await worker.authUser(loginText.Text, pwdText.Text))
+                    if(await authService.authenticate(loginText.Text, pwdText.Text))
                     {
                         this.Hide();
                         Form2 form = new Form2();
