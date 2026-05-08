@@ -95,8 +95,6 @@ C:\Users\kan14\OneDrive\Desktop\Demo\WinFormsApp1\WinFormsApp1\bin\Debug\net10.0
 C:\Users\kan14\OneDrive\Desktop\Demo\WinFormsApp1\WinFormsApp1\bin\Debug\net10.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\kan14\OneDrive\Desktop\Demo\WinFormsApp1\WinFormsApp1\bin\Debug\net10.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\kan14\OneDrive\Desktop\Demo\WinFormsApp1\WinFormsApp1\obj\Debug\net10.0-windows\WinFormsApp1.csproj.AssemblyReference.cache
-C:\Users\kan14\OneDrive\Desktop\Demo\WinFormsApp1\WinFormsApp1\obj\Debug\net10.0-windows\WinFormsApp1.Form1.resources
-C:\Users\kan14\OneDrive\Desktop\Demo\WinFormsApp1\WinFormsApp1\obj\Debug\net10.0-windows\WinFormsApp1.Form2.resources
 C:\Users\kan14\OneDrive\Desktop\Demo\WinFormsApp1\WinFormsApp1\obj\Debug\net10.0-windows\WinFormsApp1.csproj.GenerateResource.cache
 C:\Users\kan14\OneDrive\Desktop\Demo\WinFormsApp1\WinFormsApp1\obj\Debug\net10.0-windows\WinFormsApp1.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\kan14\OneDrive\Desktop\Demo\WinFormsApp1\WinFormsApp1\obj\Debug\net10.0-windows\WinFormsApp1.AssemblyInfoInputs.cache
@@ -109,3 +107,5 @@ C:\Users\kan14\OneDrive\Desktop\Demo\WinFormsApp1\WinFormsApp1\obj\Debug\net10.0
 C:\Users\kan14\OneDrive\Desktop\Demo\WinFormsApp1\WinFormsApp1\obj\Debug\net10.0-windows\WinFormsApp1.pdb
 C:\Users\kan14\OneDrive\Desktop\Demo\WinFormsApp1\WinFormsApp1\obj\Debug\net10.0-windows\WinFormsApp1.genruntimeconfig.cache
 C:\Users\kan14\OneDrive\Desktop\Demo\WinFormsApp1\WinFormsApp1\obj\Debug\net10.0-windows\ref\WinFormsApp1.dll
+C:\Users\kan14\OneDrive\Desktop\Demo\WinFormsApp1\WinFormsApp1\obj\Debug\net10.0-windows\WinFormsApp1.LoginForm.resources
+C:\Users\kan14\OneDrive\Desktop\Demo\WinFormsApp1\WinFormsApp1\obj\Debug\net10.0-windows\WinFormsApp1.ShomWin.resources

@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using WinFormsApp1.models;
 
 namespace WinFormsApp1
 {
-    internal class sqlWorker
+    public class sqlWorker
     {
         private readonly Config conf = new Config();
 
@@ -31,6 +32,35 @@ namespace WinFormsApp1
                     return await com.ExecuteScalarAsync() != null;
                 }    
             }
+        }
+
+        public async Task<User> GetCurrentUserInfo(string login, string password)
+        {
+            using (SqlConnection conn = getConnection())
+            {
+                await conn.OpenAsync();
+                using (SqlCommand com = getCommand(conf.getUserInfoRequest(), conn))
+                {
+                    com.Parameters.AddWithValue("@login", login);
+                    com.Parameters.AddWithValue("@password", password);
+
+
+                    using (var reader = await com.ExecuteReaderAsync())
+                    {
+                        if (await reader.ReadAsync())
+                        {
+                            return new User(
+                                reader.GetInt32(0),
+                                reader.GetString(1),
+                                reader.GetString(2),
+                                reader.GetString(3),
+                                reader.GetString(4)
+                                );
+                        }
+                    }
+                }
+            }
+            throw new Exception("can not create user");
         }
 
 
