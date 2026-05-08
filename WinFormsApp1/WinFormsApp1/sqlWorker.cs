@@ -6,7 +6,7 @@ using WinFormsApp1.models;
 
 namespace WinFormsApp1
 {
-    public class sqlWorker
+    public class sqlWorker : SqlWorkers
     {
         private readonly Config conf = new Config();
 

@@ -1,5 +1,3 @@
-using System.Drawing.Text;
-
 namespace WinFormsApp1
 {
     public partial class LoginForm : Form
@@ -10,13 +8,14 @@ namespace WinFormsApp1
             InitializeComponent();
 
             var conf = new Config();
-            var worker = new sqlWorker(conf);
+            SqlWorkers worker = new sqlWorker(conf);
             authService = new SqlService(worker);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
+            loginText.Select();
         }
 
         private async void auth_Click(object sender, EventArgs e)

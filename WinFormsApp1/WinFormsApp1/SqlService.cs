@@ -7,10 +7,10 @@ namespace WinFormsApp1
 {
     public class SqlService
     {
-        private readonly sqlWorker worker;
+        private readonly SqlWorkers worker;
         private User user;
 
-        public SqlService(sqlWorker worker)
+        public SqlService(SqlWorkers worker)
         {
             this.worker = worker; 
         }
@@ -26,5 +26,6 @@ namespace WinFormsApp1
         }
 
         public string GetUserFullName() => $"{user.surname} {user.f_name} {user.s_name}";
+        public string GetUserRole() => user.role;
     }
 }
