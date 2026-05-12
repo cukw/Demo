@@ -1,0 +1,27 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:DemoAvalonia.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="300"
+        x:Class="DemoAvalonia.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/Icon.ico"
+        Title="Login">
+
+    <Grid Background="{DynamicResource PrimaryBackground}" ColumnDefinitions="500" RowDefinitions="auto, auto, auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+        
+        <StackPanel Grid.Row="0" Spacing="1" Margin="10,0,10,0" >
+            <Label Content="Логин"></Label>
+            <TextBox ></TextBox>
+            <Label Content="Пароль"></Label>
+            <TextBox Margin="0,0,0,10"></TextBox>
+        </StackPanel>
+            
+
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" Spacing="10">
+            <Button Content="Войти" VerticalAlignment="Center" HorizontalAlignment="Center"></Button>   
+            <Button Content="Войти как гость" VerticalAlignment="Center" HorizontalAlignment="Center"></Button> 
+        </StackPanel>
+    </Grid>
+</Window>
