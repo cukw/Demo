@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Avalonia", "Avalonia", "{DA5C3214-5362-D53D-7EE1-7B72DB27BE75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAvalonia", "Avalonia\DemoAvalonia.csproj", "{AE22FB84-4FCC-0896-DE11-9849595ABF33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE22FB84-4FCC-0896-DE11-9849595ABF33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE22FB84-4FCC-0896-DE11-9849595ABF33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE22FB84-4FCC-0896-DE11-9849595ABF33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE22FB84-4FCC-0896-DE11-9849595ABF33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AE22FB84-4FCC-0896-DE11-9849595ABF33} = {DA5C3214-5362-D53D-7EE1-7B72DB27BE75}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4625A711-69E7-4EE6-AE61-084BAB6BA684}
+	EndGlobalSection
+EndGlobal
