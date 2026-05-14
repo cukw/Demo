@@ -214,9 +214,9 @@
             NameItem.AutoSize = true;
             NameItem.Location = new Point(6, 0);
             NameItem.Name = "NameItem";
-            NameItem.Size = new Size(38, 15);
+            NameItem.Size = new Size(59, 15);
             NameItem.TabIndex = 12;
-            NameItem.Text = "label1";
+            NameItem.Text = "Артикул: ";
             // 
             // CardTemplates
             // 

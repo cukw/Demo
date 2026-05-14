@@ -32,7 +32,11 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             Greeter = new Label();
             ShowCardsItems = new FlowLayoutPanel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            FindLabel = new Label();
+            Finding = new TextBox();
             tableLayoutPanel1.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // CloseWindow
@@ -73,19 +77,49 @@
             // 
             // ShowCardsItems
             // 
+            ShowCardsItems.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ShowCardsItems.AutoScroll = true;
             ShowCardsItems.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ShowCardsItems.Dock = DockStyle.Fill;
-            ShowCardsItems.Location = new Point(0, 52);
+            ShowCardsItems.Location = new Point(0, 93);
             ShowCardsItems.Name = "ShowCardsItems";
-            ShowCardsItems.Size = new Size(1964, 1369);
+            ShowCardsItems.Size = new Size(1964, 1328);
             ShowCardsItems.TabIndex = 3;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanel1.Controls.Add(FindLabel);
+            flowLayoutPanel1.Controls.Add(Finding);
+            flowLayoutPanel1.Location = new Point(0, 52);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1964, 35);
+            flowLayoutPanel1.TabIndex = 4;
+            // 
+            // FindLabel
+            // 
+            FindLabel.Anchor = AnchorStyles.Left;
+            FindLabel.AutoSize = true;
+            FindLabel.Location = new Point(3, 0);
+            FindLabel.Name = "FindLabel";
+            FindLabel.Size = new Size(42, 15);
+            FindLabel.TabIndex = 0;
+            FindLabel.Text = "Поиск";
+            // 
+            // Finding
+            // 
+            Finding.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            Finding.Location = new Point(51, 3);
+            Finding.Name = "Finding";
+            Finding.Size = new Size(100, 23);
+            Finding.TabIndex = 1;
+            Finding.KeyDown += Finding_KeyDown;
             // 
             // ShopWin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1964, 1421);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(ShowCardsItems);
             Controls.Add(tableLayoutPanel1);
             Name = "ShopWin";
@@ -93,6 +127,8 @@
             Load += ShomWin_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -102,5 +138,8 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Label Greeter;
         private FlowLayoutPanel ShowCardsItems;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label FindLabel;
+        private TextBox Finding;
     }
 }

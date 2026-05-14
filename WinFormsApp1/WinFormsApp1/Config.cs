@@ -11,6 +11,7 @@ namespace WinFormsApp1
         private readonly string UserInfoRequest = "select id, role, surname, f_name, s_name from users where login=@login and password=@password";
         private readonly string PathToImage = Path.GetFullPath(@"..\..\..\data", AppDomain.CurrentDomain.BaseDirectory);
         private readonly string ProductInfoRequest = "select * from items";
+        private readonly string FindProductRequest = "select * from items where articul=@var or unit=@var or courier=@var or author=@var or about=@var";
         
         public string getServerConnection() => server;
         public string getAuthRequest() => authRequest;
@@ -18,5 +19,6 @@ namespace WinFormsApp1
 
         public string getPathToImage(string image) => Path.Combine(PathToImage, image);
         public string getProductInfoRequest() => ProductInfoRequest;
+        public string getFindProductRequest(string conditiion) => FindProductRequest;
     }
 }

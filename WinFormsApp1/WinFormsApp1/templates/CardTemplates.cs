@@ -23,7 +23,7 @@ namespace WinFormsApp1.templates
 
         public void SetData(string name, string description, string creator, string dealer, decimal price, string unit, int count, int discount, Image image)
         {
-            NameItem.Text = name;
+            NameItem.Text += name;
             Description.Text = description;
             Creator.Text = creator;
             Dealer.Text = dealer;

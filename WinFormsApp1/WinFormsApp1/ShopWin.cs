@@ -23,6 +23,25 @@ namespace WinFormsApp1
             this.service = service;
         }
 
+        private void LoadPanel(List<Items>items)
+        {
+            foreach (var info in items)
+            {
+                CardTemplates card = new CardTemplates();
+                card.SetData(info.Articul, info.About, info.Author, info.Courier, info.Price, info.Unit, info.Count, info.Discount, info.Photo);
+
+                if (info.Discount >= 15)
+                {
+                    card.BackColor = ColorTranslator.FromHtml("#2E8B57");
+                }
+
+                card.Tag = info;
+                card.Click += CardTemplates_Click;
+
+                ShowCardsItems.Controls.Add(card);
+            }
+        }
+
         private async void ShomWin_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
@@ -43,24 +62,9 @@ namespace WinFormsApp1
                 default: return;
             }
 
+            await service.GetItemsInfo();
 
-
-            foreach (var info in await service.GetItemsInfo())
-            {
-                CardTemplates card = new CardTemplates();
-                card.SetData(info.Articul, info.About, info.Author, info.Courier, info.Price, info.Unit, info.Count, info.Discount, info.Photo);
-
-                if (info.Discount >= 15)
-                {
-                    card.BackColor = ColorTranslator.FromHtml("#2E8B57");
-                }
-
-                card.Tag = info;
-                card.Click += CardTemplates_Click;
-
-                ShowCardsItems.Controls.Add(card);
-            }
-
+            LoadPanel(service.GetListItems());
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -81,6 +85,24 @@ namespace WinFormsApp1
             Items item = (Items)card.Tag;
 
             MessageBox.Show($"Выбран товар: {item.Articul}");
+        }
+
+        private async void Finding_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(Finding.Text))
+                {
+                    ShowCardsItems.Controls.Clear();
+
+                    LoadPanel(await service.GetFindingItems(Finding.Text));
+                }
+                else
+                {
+                    ShowCardsItems.Controls.Clear();
+                    LoadPanel(service.GetListItems());
+                }
+            }
         }
     }
 }
