@@ -62,7 +62,39 @@ namespace WinFormsApp1
             }
             throw new Exception("can not create user");
         }
-
-
+        public async Task<List<Items>> GetProducts()
+        {
+            List<Items> products = new List<Items>();
+            using (SqlConnection conn = getConnection())
+            {
+                await conn.OpenAsync();
+                using(SqlCommand com = getCommand(conf.getProductInfoRequest(), conn))
+                {
+                    using (var reader = await com.ExecuteReaderAsync())
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            string picture = reader.IsDBNull(10) ? "picture.png" : reader.GetString(10);
+                            products.Add(new Items(
+                            reader.GetString(0),
+                            reader.GetString(1),
+                            reader.GetString(2),
+                            reader.GetDecimal(3),
+                            reader.GetString(4),
+                            reader.GetString(5),
+                            reader.GetString(6),
+                            reader.GetInt32(7),
+                            reader.GetInt32(8),
+                            reader.GetString(9),
+                            Image.FromFile(conf.getPathToImage(picture))
+                            ));
+                        }
+                    }
+                }
+            }
+            return products;
+        }
     }
+
+
 }

@@ -20,18 +20,22 @@ namespace WinFormsApp1
 
         private async void auth_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(pwdText.Text))
+            if (authService.ErrorHandle(pwdText) && authService.ErrorHandle(loginText))
             {
-                if (!string.IsNullOrEmpty(loginText.Text))
+                if(await authService.authenticate(loginText.Text, pwdText.Text));
                 {
-                    if(await authService.authenticate(loginText.Text, pwdText.Text))
-                    {
-                        this.Hide();
-                        ShomWin form = new ShomWin(authService);
-                        await form.ShowAsync();
-                    }
+                    this.Hide();
+                    ShopWin win = new ShopWin(authService);
+                    await win.ShowAsync();
                 }
             }
+        }
+
+        private async void LoginGuest_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ShopWin win = new ShopWin(authService);
+            await win.ShowAsync();
         }
     }
 }

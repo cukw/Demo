@@ -15,6 +15,15 @@ namespace WinFormsApp1
             this.worker = worker; 
         }
 
+        public bool ErrorHandle(TextBox textBox)
+        {
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                return false;
+            }
+            return true;
+        }
+
         public async Task<bool> authenticate(string login, string password)
         {
             if (await worker.authUser(login, password))
@@ -25,7 +34,9 @@ namespace WinFormsApp1
             return false;
         }
 
-        public string GetUserFullName() => $"{user.surname} {user.f_name} {user.s_name}";
-        public string GetUserRole() => user.role;
+        public async Task<List<Items>> GetItemsInfo() => await worker.GetProducts();
+
+        public string GetUserFullName() => user is not null ? $"{user.surname} {user.f_name} {user.s_name}": "Guest";
+        public string GetUserRole() => user is not null? user.role : "Guest";
     }
 }

@@ -10,5 +10,7 @@ namespace WinFormsApp1
             Task<bool>authUser(string login, string password);
 
             Task<User> GetCurrentUserInfo(string login, string password);
+
+            Task<List<Items>> GetProducts();
         }
 }
