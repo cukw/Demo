@@ -1,0 +1,22 @@
+{
+  "ShowEmptyProjects": false,
+  "SelectedGroups": [
+    "C:\\Users\\kan14\\OneDrive\\Desktop\\Demo\\WinFormsApp1\\WinFormsApp1\\ShopWin.resx",
+    "C:\\Users\\kan14\\OneDrive\\Desktop\\Demo\\WinFormsApp1\\WinFormsApp1\\Properties\\Resources.resx",
+    "C:\\Users\\kan14\\OneDrive\\Desktop\\Demo\\WinFormsApp1\\WinFormsApp1\\LoginForm.resx"
+  ],
+  "ExpandedProjects": [],
+  "EnableSpellChecker": true,
+  "ColumnOrder": [
+    "name",
+    "file-path",
+    "file-name",
+    "type",
+    "neutral-value",
+    "neutral-comment"
+  ],
+  "VisibleColumnKeys": [
+    "name",
+    "neutral-value"
+  ]
+}
